@@ -1,8 +1,8 @@
-title: Samyu Comandur
+title: SAMYU COMANDUR
 author: Samyu Comandur
 
 url: "https://samyuc.github.io"
-baseurl: "/"
+baseurl: ""
 
 profile-picture: assets/profile.png
 favicon_location: assets/favicon.ico
@@ -12,10 +12,10 @@ permalink: /:year-:month-:day-:title/
 #    style: compressed
 #    sass_dir: css
 
-#navbar:
-# - name: "CV"
-#   link: "cv"
-# - name: "Newsletter"
-#   link: "newsletter"
-# - name: "Links"
-#   link: "links"
+navbar:
+ - name: "About"
+   link: ""
+ - name: "Writing"
+   link: "writing"
+ - name: "Contact"
+   link: "contact"
