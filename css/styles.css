@@ -5,7 +5,15 @@ body {
 	 font-size: 14px;
 	 background-color: #fdfcff;
 	 min-height: 100%;
+	 color: #171926;
 }
+.sidebar {
+  grid-area: sidebar;
+}
+.col {
+  grid-area: col;
+}
+
 section {
 	 font-family: "IBM Plex Mono", monospace;
 	 font-weight: 500;
@@ -15,7 +23,7 @@ section {
 
 a {
 	 text-decoration: none;
-	 color: #00f; 
+	 color: #de432b; 
 }
 a:hover {
 	 text-decoration: underline;
@@ -25,7 +33,7 @@ hr {
 	 border-top: 1px solid rgba(0, 0, 0, 0.1);
 	 border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
- code {
+code {
 	 background-color: #d8e7ff;
 	 color: #002b72;
 }
@@ -35,11 +43,21 @@ hr {
  .pull-right, .post-card .details {
 	 float: right;
 }
- .container {
-	 max-width: 740px;
-	 margin: auto;
+
+.wrapper{
+	display: grid; 
+	flex-wrap: wrap;
+	grid-gap: 10px;
+        grid-template-columns: 1fr 3fr;
+  	grid-template-areas: "sidebar col"; 
 }
- .navbar { 
+
+.container {	
+	margin: auto;
+	max-width: 80%;
+}
+
+.navbar { 
 	 padding: 30px 0 20px 0;
 }
  .navbar ul {	
@@ -57,14 +75,14 @@ hr {
 }
 
  .navbar a {
-         color: #272727;  
+         color: #171926;  
 }
 
  .navbar .site-title {
 	 font-family: "IBM Plex Sans Condensed", sans-serif; 
 	 font-weight: 600;	
-	 font-size: 32px;
-	 color: #272727;
+	 font-size: 40px;
+	 color: #171926;
 	 display: inline-block;
 }
  .post-card {
@@ -110,21 +128,15 @@ hr {
  .footer a {
 	 color: black;
 }
- @media (max-width: 800px) {
-	 .container {
-		 max-width: 600px;
-		 transition: 0.3s ease all;
-	}
+
+@media (max-width: 768px) {
+  grid-template-rows: repeat(auto, 1fr);
+  grid-template-areas:
+    "column"
+    "sidebar";
 }
- @media (max-width: 650px) {
-	 .container {
-		 max-width: 83%;
-	}
-	 .navbar ul {
-		 margin-top: 5px;
-	}
-}
- @media (max-width: 500px) {
+
+@media (max-width: 625px) {
 	 .navbar {
 		 text-align: center;
 		 padding: 50px 0px 0px 0px;
@@ -147,6 +159,17 @@ hr {
 		 width: 100%;
 		 float: none;
 	}
+	.col {
+     		width: 100%;
+   	}
+  	.sidebar {
+      		width: 100%;
+   	}
+}
+@media (max-width: 480px) {
+         .content .profile-picture img {
+                 margin-top: -5px;
+        }
 }
  .content {
 	 line-height: 1.5;
@@ -176,6 +199,7 @@ hr {
 	 margin: 5px 0 5px 0;
 }
  .content ul {
+	 margin: 0;
 	 padding: 0 20px 0 20px;
 }
  .content ol {
@@ -202,15 +226,12 @@ hr {
 	 padding: 0;
 	 margin: 0;
 }
- @media (max-width: 480px) {
-	 .content .profile-picture img {
-		 margin-top: -5px;
-	}
-}
- .content img {
+
+.content img {
+	 width: 100%;
+         height: auto;
 	 text-align: center;
-	 margin: 10px 10px 10px 10px;
-	 max-width: 740px;
+	 border-radius: 50%;
 }
  .content .color-red {
 	 color: #ff0f00;
