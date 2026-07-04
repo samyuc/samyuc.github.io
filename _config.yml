@@ -17,5 +17,7 @@ navbar:
    link: ""
  - name: "Writing"
    link: "writing"
+ - name: "Press"
+   link: "press"
  - name: "Contact"
    link: "contact"
